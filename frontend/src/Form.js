@@ -30,21 +30,20 @@ class Reservation extends React.Component {
           */}
           <br/>
             <label>
+                <br/>Sex: &nbsp;
                 <select name = "dropdown">
-                  <option value="" label="Sex" selected>Sex</option>
                   <option value = "Female" onClick={()=>values.sex="0"}>Female</option>
                   <option value = "Male" onClick={()=>values.sex="1"}>Male</option>
                   <option value = "Other" onClick={()=>values.sex="2"}>Other</option>
                 </select>  
             </label>
-            <br />
+            <br /><br/>Age<br/>
               <Field name="age" type='number' required max='199' min='0'/>
-              <br/>Age<br/><br/>
+              <br/><br/>Weight (kg)<br/>
               <Field name="weight" type='number' required max='199' min='1'/>
-              <br/>Weight (kg)<br/><br/>
+              <br/><br/>Height (cm)<br/>
               <Field name="height" type='number' required max='300' min='50'/>
-              <br/>Height (cm)<br/><br/>
-            <br />
+            <br /><br/>
             <label>
                 Are you a Health Worker? &nbsp;
                 <select name = "dropdown">
@@ -122,14 +121,13 @@ class Reservation extends React.Component {
                 &nbsp;Hypertension
             </label>
             <br />
-            <label>
+            <label>Smoking Situation: &nbsp;
               <select name = "dropdown">
-                <option value="" label="Smoking situation" selected>Smoking situation</option>
                 <option value = "SmokeNever" onClick={()=>values.smoking="0"}>Never Smoked</option>
                 <option value = "Quit<1" onClick={()=>values.smoking="1"}>Quit Smoking &lt; 1 year ago</option>
                 <option value = "Quit<5" onClick={()=>values.smoking="3"}>Quit Smoking 5 years ago</option>
                 <option value = "Quit<10" onClick={()=>values.smoking="2"}>Quit Smoking 10 years ago</option>
-                <option value = "Vape" onClick={()=>values.smoking="4"}>Vape Only</option>
+                <option value = "Vape" onClick={()=>values.smoking="4"}>Vaping Only</option>
                 <option value = "Light" onClick={()=>values.smoking="6"}>Light Smoking</option>
                 <option value = "Medium" onClick={()=>values.smoking="7"}>Medium Smoking</option>
                 <option value = "Heavy" onClick={()=>values.smoking="5"}>Heavy Smoking</option>
