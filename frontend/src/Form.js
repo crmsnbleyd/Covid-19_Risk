@@ -109,11 +109,16 @@ class Reservation extends React.Component {
             <br />
             <label>
                 <Field type="checkbox" name="checked" value="7" />  
-                &nbsp;HIV Positive
+                &nbsp;Diabetes
             </label>
             <br />
             <label>
                 <Field type="checkbox" name="checked" value="8" />  
+                &nbsp;HIV Positive
+            </label>
+            <br />
+            <label>
+                <Field type="checkbox" name="checked" value="9" />  
                 &nbsp;Hypertension
             </label>
             <br />

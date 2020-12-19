@@ -20,7 +20,7 @@ class Main extends React.Component {
        }
     //    this.state.obj.sex;
     //    this.state.obj.smoking;
-    //    this.state.obj.bmi = this.state.obj.weight/((this.state.obj.height/100)*(this.state.obj.height/100));
+       this.state.obj.bmi = this.state.obj.weight/((this.state.obj.height/100)*(this.state.obj.height/100));
     //    this.state.obj.cv;           coronavirus
     //    this.state.obj.cs;            covid symptoms
     //    this.state.obj.cc;           covid contact
@@ -32,7 +32,12 @@ class Main extends React.Component {
         }
         else {
             this.manipulateValues();
-            var form= <br/>;
+            var form;
+            console.log('Fetching details for ', this.state.obj);
+            // fetch(`http://b163a5c0ddf6.ngrok.io/sent/${this.state.obj.sex}/${this.state.obj.smoking}/${this.state.obj.age}/${this.state.obj.bmi}/${this.state.obj.cv}/${this.state.obj.cs}/${this.state.obj.cc}/${this.state.checked[0]}/${this.state.checked[1]}/${this.state.checked[2]}/${this.state.checked[3]}/${this.state.checked[4]}/${this.state.checked[5]}/${this.state.checked[6]}/${this.state.checked[7]}/${this.state.checked[8]}/${this.state.obj.hw}`)
+            // .then(response=>response.json())
+            // .then(data => {console.log(data)});
+           
         }
         return(
             <Container className="mt-5 text-justify bg-dark text-light">
