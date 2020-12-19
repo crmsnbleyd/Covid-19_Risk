@@ -1,7 +1,11 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
+import { Alert } from "reactstrap";
 // import { Container } from "reactstrap";
 class Reservation extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
   handleInputChange(event) {
     const target = event.target;
@@ -14,18 +18,13 @@ class Reservation extends React.Component {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
       <div >
-        <Formik initialValues={{toggle: false, checked: [],}} onSubmit={async (values) => {await sweep(500); alert(JSON.stringify(values, null, 2));}}>
+        <Formik initialValues={{checked: [], color: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); alert(JSON.stringify(values, null, 2));}}>
           {({ values }) => (
         <Form>
           {/* 
             This first checkbox will result in a boolean value being stored. Note that the `value` prop
             on the <Field/> is omitted
           */}
-          <label>
-            <Field type="checkbox" name="toggle" />
-            {`${values.toggle}`}
-          </label>
-
           {/* 
             Multiple checkboxes with the same name attribute, but different
             value attributes will be considered a "checkbox group". Formik will automagically
@@ -53,8 +52,24 @@ class Reservation extends React.Component {
                 Four
             </label>
             <div id="checkbox-group"></div>
+            <label>
+              <label htmlFor="email" style={{ display: 'block' }}>
+                Color
+              </label>
+              <select
+                name="color"
+                value={values.color}
+                style={{ display: 'block' }}
+              >
+                <option value="" label="Select a color" />
+                <option value="red" label="red" onClick={()=>values.color="red"} />
+                <option value="blue" label="blue" onClick={()=>values.color="blue"}  />
+                <option value="green" label="green" onClick={()=>values.color="green"} />
+              </select>
+            </label>
+            <div id="checkbox-group"></div>
 
-          <button type="submit">Submit</button>
+          <button type="submit">Results</button>
         </Form>
       )}
           </Formik>
