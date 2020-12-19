@@ -15,7 +15,7 @@ class Reservation extends React.Component {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
       <div >
-        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); alert(JSON.stringify(values, null, 2));}}>
+        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); this.props.valuesAdd(values) ;}}>
           {({ values }) => (
         <Form>
           {/* 
@@ -28,19 +28,31 @@ class Reservation extends React.Component {
             bind the checked values to a single array for your benefit. All the add and remove
             logic will be taken care of for you.
           */}
-          <div id="checkbox-group">Checked</div>
+          <br/>
             <label>
                 <select name = "dropdown">
                   <option value="" label="Sex" selected>Sex</option>
-                  <option value = "Female" onClick={()=>values.smoking="0"}>Female</option>
-                  <option value = "Male" onClick={()=>values.smoking="1"}>Male</option>
-                  <option value = "Other" onClick={()=>values.smoking="2"}>Other</option>
+                  <option value = "Female" onClick={()=>values.sex="0"}>Female</option>
+                  <option value = "Male" onClick={()=>values.sex="1"}>Male</option>
+                  <option value = "Other" onClick={()=>values.sex="2"}>Other</option>
                 </select>  
             </label>
             <div id="checkbox-group"></div>
               <Field name="age" type='number' required max='199' min='0'/>
               <br/>Age<br/><br/>
+              <Field name="weight" type='number' required max='199' min='1'/>
+              <br/>Weight (kg)<br/><br/>
+              <Field name="height" type='number' required max='300' min='50'/>
+              <br/>Height (cm)<br/><br/>
             <div id="checkbox-group"></div>
+            <label>
+                <select name = "dropdown">
+                  <option value="" label="Health Worker" selected>Health Worker</option>
+                  <option value = "Yes" onClick={()=>values.hw="0"}>Yes</option>
+                  <option value = "No" onClick={()=>values.hw="1"}>No</option>
+                </select>  
+            </label>
+            <div></div>
             <label>
               <Field type="checkbox" name="checked" value="1" />
               &nbsp;Asthma 
@@ -74,6 +86,11 @@ class Reservation extends React.Component {
             <label>
                 <Field type="checkbox" name="checked" value="7" />  
                 &nbsp;HIV Positive
+            </label>
+            <br />
+            <label>
+                <Field type="checkbox" name="checked" value="8" />  
+                &nbsp;Hypertension
             </label>
             <div id="checkbox-group"></div>
             <label>

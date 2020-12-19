@@ -12,12 +12,20 @@ class Main extends React.Component {
           obj: {}
         }
     }
+    manipulateValues() {
+       this.state.array=[0,0,0,0,0,0,0,0];
+       var x;
+       for (x in this.state.obj.checked) {
+           this.state.array[this.state.obj.checked[x]-1]=1;
+       }
+       
+    }
     render(){
         if(this.state.page===0){
-            var form = <Reservation pageChange={()=>this.setState(state => ({page: state.page + 1}))} jsonAdd={(e)=>this.setState({obj: e})} />;
+            var form = <Reservation pageChange={()=>this.setState(state => ({page: state.page + 1}))} valuesAdd={(e)=>this.setState({obj: e})} />;
         }
         else {
-            // var form = <Result />;
+            this.manipulateValues();
             var form= <br/>;
         }
         return(
