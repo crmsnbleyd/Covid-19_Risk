@@ -4,7 +4,6 @@ class Reservation extends React.Component {
     constructor(props) {
         super(props);
     }
-
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -16,7 +15,7 @@ class Reservation extends React.Component {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
       <div >
-        <Formik initialValues={{checked: [], color: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); alert(JSON.stringify(values, null, 2));}}>
+        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); alert(JSON.stringify(values, null, 2));}}>
           {({ values }) => (
         <Form>
           {/* 
@@ -31,31 +30,63 @@ class Reservation extends React.Component {
           */}
           <div id="checkbox-group">Checked</div>
             <label>
+                <select name = "dropdown">
+                  <option value="" label="Sex" selected>Sex</option>
+                  <option value = "Female" onClick={()=>values.smoking="0"}>Female</option>
+                  <option value = "Male" onClick={()=>values.smoking="1"}>Male</option>
+                  <option value = "Other" onClick={()=>values.smoking="2"}>Other</option>
+                </select>  
+            </label>
+            <div id="checkbox-group"></div>
+              <Field name="age" type='number' required max='199' min='0'/>
+              <br/>Age<br/><br/>
+            <div id="checkbox-group"></div>
+            <label>
               <Field type="checkbox" name="checked" value="1" />
-              One 
+              &nbsp;Asthma 
             </label>
             <div id="checkbox-group"></div>
             <label>
               <Field type="checkbox" name="checked" value="2" />
-              Two
+              &nbsp;Kidney Disease
             </label>
             <div id="checkbox-group"></div>
             <label>
               <Field type="checkbox" name="checked" value="3" />
-              Three
+              &nbsp;Liver Disease
             </label>
             <div id="checkbox-group"></div>
             <label>
                 <Field type="checkbox" name="checked" value="4" />  
-                Four
+                &nbsp;Compromised Immune System
+            </label>
+            <div id="checkbox-group"></div>
+            <label>
+                <Field type="checkbox" name="checked" value="5" />  
+                &nbsp;Heart Disease
+            </label>
+            <div id="checkbox-group"></div>
+            <label>
+                <Field type="checkbox" name="checked" value="6" />  
+                &nbsp;Lung Disease
+            </label>
+            <div id="checkbox-group"></div>
+            <label>
+                <Field type="checkbox" name="checked" value="7" />  
+                &nbsp;HIV Positive
             </label>
             <div id="checkbox-group"></div>
             <label>
               <select name = "dropdown">
-                <option value="" label="Select a color" selected>Select a color</option>
-                <option value = "Computer Architecture" onClick={()=>values.color="coa"}>Computer Architecture</option>
-                <option value = "Java" onClick={()=>values.color="java"}>Java</option>
-                <option value = "Discrete Mathematics" onClick={()=>values.color="math"}>Discrete Mathematics</option>
+                <option value="" label="Smoking situation" selected>Smoking situation</option>
+                <option value = "SmokeNever" onClick={()=>values.smoking="0"}>Never Smoked</option>
+                <option value = "Quit<1" onClick={()=>values.smoking="1"}>Quit Smoking &lt; 1 year ago</option>
+                <option value = "Quit<5" onClick={()=>values.smoking="3"}>Quit Smoking 5 years ago</option>
+                <option value = "Quit<10" onClick={()=>values.smoking="2"}>Quit Smoking 10 years ago</option>
+                <option value = "Vape" onClick={()=>values.smoking="4"}>Vape Only</option>
+                <option value = "Light" onClick={()=>values.smoking="6"}>Light Smoking</option>
+                <option value = "Medium" onClick={()=>values.smoking="7"}>Medium Smoking</option>
+                <option value = "Heavy" onClick={()=>values.smoking="5"}>Heavy Smoking</option>
               </select>
             </label>
             <div id="checkbox-group"></div>
