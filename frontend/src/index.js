@@ -7,6 +7,7 @@ import About from './About';
 import Main from './Main';
 import {BrowserRouter,  Route, Switch} from 'react-router-dom';
 import Navbarn from './Navbar';
+import "./Background.css";
 
 ReactDOM.render(
   <React.StrictMode>

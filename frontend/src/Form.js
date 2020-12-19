@@ -15,7 +15,7 @@ class Reservation extends React.Component {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
       <div>
-        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {this.props.valuesAdd(values) ; this.props.pageChange(); }}>
+        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: "", hw:0, cv:0, cs: 0, cc: 0}} onSubmit={async (values) => {this.props.valuesAdd(values) ; this.props.pageChange(); }}>
           {({ values }) => (
         <Form>
           {/* 
@@ -47,32 +47,32 @@ class Reservation extends React.Component {
             <label>
                 Are you a Health Worker? &nbsp;
                 <select name = "dropdown">
-                  <option value = "Yes" onClick={()=>values.hw="0"}>No</option>
-                  <option value = "No" onClick={()=>values.hw="1"}>Yes</option>
+                  <option value = "No" onClick={()=>values.hw="0"}>No</option>
+                  <option value = "Yes" onClick={()=>values.hw="1"}>Yes</option>
                 </select>  
             </label>
             <br />
             <label>
                 Have you contracted Covid-19 before? &nbsp;
                 <select name = "dropdown">
-                  <option value = "Yes" onClick={()=>values.cv="0"}>No</option>
-                  <option value = "No" onClick={()=>values.cv="1"}>Yes</option>
+                  <option value = "No" onClick={()=>values.cv="0"}>No</option>
+                  <option value = "Yes" onClick={()=>values.cv="1"}>Yes</option>
                 </select>  
             </label>
             <br />
             <label>
                 Have you shown Covid-19-like symptoms before? &nbsp;
                 <select name = "dropdown">
-                  <option value = "Yes" onClick={()=>values.cs="0"}>No</option>
-                  <option value = "No" onClick={()=>values.cs="1"}>Yes</option>
+                  <option value = "No" onClick={()=>values.cs="0"}>No</option>
+                  <option value = "Yes" onClick={()=>values.cs="1"}>Yes</option>
                 </select>  
             </label>
             <br />
             <label>
                 Have you come in contact with a Covid+ person? &nbsp;
                 <select name = "dropdown">
-                  <option value = "Yes" onClick={()=>values.cc="0"}>No</option>
-                  <option value = "No" onClick={()=>values.cc="1"}>Yes</option>
+                  <option value = "No" onClick={()=>values.cc="0"}>No</option>
+                  <option value = "Yes" onClick={()=>values.cc="1"}>Yes</option>
                 </select>  
             </label>
             <br />

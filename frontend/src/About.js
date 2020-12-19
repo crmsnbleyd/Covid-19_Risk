@@ -1,20 +1,17 @@
 import React from "react";
 import './About.css'
-import Agastya from './img/Agastya.png';
-import Arnav from './img/Arnav.png';
-import Simran from './img/Simran.png';
+import Agastya from './img/agastya.jpg';
+import Arnav from './img/arnav.jpg';
+import Simran from './img/simran.jpg';
 
 const About = () => (
   <div className="fade-in about">
     <h1 className="title is-1 text-center mt-4 text-info mb-4">The About Page</h1>
     <p className="container text-secondary">
-    You’ve heard about predatory loan sharks but what about a shark that helps you make sound financial decisions through the troubled waters of the stock market?<strong><p className="text-center text-info">Meet Sharky!</p></strong>
-    At Shark Rank, we work with historical data about the stock prices of a publicly listed company. We implement a mix of machine learning algorithms to predict the future stock price of a company.<br/>
-    <ul>
-      <li>We analyze the company’s future profitability on the basis of its current business environment and financial performance by gathering information from Twitter Analytics.</li>
-      <li>We also read the charts and use statistical figures to identify the trends in the stock market.</li>
-    </ul>
-
+    Scientists have been trying to develop a vaccine ever since covid-19 became a pandemic.
+    But, now that it is here one of the biggest challenges is the logistics of distributing it in an effective manner.<br/>
+    The solution we have come up with employs machine learning to make the best decision and also to eliminate natural human bias.
+    We have also made this website which uses the trained model to act as the frontend for our project, conveying the information in a digestible form.
     </p>
     <h3 className= "text-center mt-5">Meet the Team</h3>
     <div className="container mt-5">
