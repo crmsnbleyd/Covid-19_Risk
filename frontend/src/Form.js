@@ -1,7 +1,5 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
-import { Alert } from "reactstrap";
-// import { Container } from "reactstrap";
 class Reservation extends React.Component {
     constructor(props) {
         super(props);

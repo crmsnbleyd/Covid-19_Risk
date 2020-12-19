@@ -1,5 +1,5 @@
 import './Navbar.css';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from './img/Logo.png';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 function Navbarn() {

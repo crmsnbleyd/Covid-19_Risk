@@ -1,6 +1,6 @@
 import React from "react" 
 import Reservation from "./Form";
-import { Container, NavbarText } from "reactstrap";
+import { Container} from "reactstrap";
 // import { Result } from "./Result";
 // (JSON.stringify(values, null, 2))
 
@@ -13,7 +13,7 @@ class Main extends React.Component {
         }
     }
     render(){
-        if(this.state.page==0){
+        if(this.state.page===0){
             var form = <Reservation pageChange={()=>this.setState(state => ({page: state.page + 1}))} jsonAdd={(e)=>this.setState({obj: e})} />;
         }
         else {
