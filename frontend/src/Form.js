@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
-import { Container } from "reactstrap";
+// import { Container } from "reactstrap";
 class Reservation extends React.Component {
 
   handleInputChange(event) {
@@ -14,7 +14,6 @@ class Reservation extends React.Component {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
       <div >
-          <Container className="mt-5 text-center">
         <Formik initialValues={{toggle: false, checked: [],}} onSubmit={async (values) => {await sweep(500); alert(JSON.stringify(values, null, 2));}}>
           {({ values }) => (
         <Form>
@@ -59,7 +58,6 @@ class Reservation extends React.Component {
         </Form>
       )}
           </Formik>
-      </Container>
       </div>
     );
   }
