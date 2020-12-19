@@ -53,18 +53,11 @@ class Reservation extends React.Component {
             </label>
             <div id="checkbox-group"></div>
             <label>
-              <label htmlFor="email" style={{ display: 'block' }}>
-                Color
-              </label>
-              <select
-                name="color"
-                value={values.color}
-                style={{ display: 'block' }}
-              >
-                <option value="" label="Select a color" />
-                <option value="red" label="red" onClick={()=>values.color="red"} />
-                <option value="blue" label="blue" onClick={()=>values.color="blue"}  />
-                <option value="green" label="green" onClick={()=>values.color="green"} />
+              <select name = "dropdown">
+                <option value="" label="Select a color" selected>Select a color</option>
+                <option value = "Computer Architecture" onClick={()=>values.color="coa"}>Computer Architecture</option>
+                <option value = "Java" onClick={()=>values.color="java"}>Java</option>
+                <option value = "Discrete Mathematics" onClick={()=>values.color="math"}>Discrete Mathematics</option>
               </select>
             </label>
             <div id="checkbox-group"></div>
