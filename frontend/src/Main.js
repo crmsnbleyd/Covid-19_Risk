@@ -18,7 +18,13 @@ class Main extends React.Component {
        for (x in this.state.obj.checked) {
            this.state.array[this.state.obj.checked[x]-1]=1;
        }
-       
+    //    this.state.obj.sex;
+    //    this.state.obj.smoking;
+    //    this.state.obj.bmi = this.state.obj.weight/((this.state.obj.height/100)*(this.state.obj.height/100));
+    //    this.state.obj.cv;           coronavirus
+    //    this.state.obj.cs;            covid symptoms
+    //    this.state.obj.cc;           covid contact
+
     }
     render(){
         if(this.state.page===0){

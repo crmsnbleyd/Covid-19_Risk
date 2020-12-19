@@ -14,7 +14,7 @@ class Reservation extends React.Component {
   render() {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
-      <div >
+      <div>
         <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); this.props.valuesAdd(values) ;}}>
           {({ values }) => (
         <Form>
@@ -37,52 +37,76 @@ class Reservation extends React.Component {
                   <option value = "Other" onClick={()=>values.sex="2"}>Other</option>
                 </select>  
             </label>
-            <div id="checkbox-group"></div>
+            <br />
               <Field name="age" type='number' required max='199' min='0'/>
               <br/>Age<br/><br/>
               <Field name="weight" type='number' required max='199' min='1'/>
               <br/>Weight (kg)<br/><br/>
               <Field name="height" type='number' required max='300' min='50'/>
               <br/>Height (cm)<br/><br/>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
+                Are you a Health Worker? &nbsp;
                 <select name = "dropdown">
-                  <option value="" label="Health Worker" selected>Health Worker</option>
-                  <option value = "Yes" onClick={()=>values.hw="0"}>Yes</option>
-                  <option value = "No" onClick={()=>values.hw="1"}>No</option>
+                  <option value = "Yes" onClick={()=>values.hw="0"}>No</option>
+                  <option value = "No" onClick={()=>values.hw="1"}>Yes</option>
                 </select>  
             </label>
-            <div></div>
+            <br />
+            <label>
+                Have you contracted Covid-19 before? &nbsp;
+                <select name = "dropdown">
+                  <option value = "Yes" onClick={()=>values.cv="0"}>No</option>
+                  <option value = "No" onClick={()=>values.cv="1"}>Yes</option>
+                </select>  
+            </label>
+            <br />
+            <label>
+                Have you shown Covid-19-like symptoms before? &nbsp;
+                <select name = "dropdown">
+                  <option value = "Yes" onClick={()=>values.cs="0"}>No</option>
+                  <option value = "No" onClick={()=>values.cs="1"}>Yes</option>
+                </select>  
+            </label>
+            <br />
+            <label>
+                Have you come in contact with a Covid+ person? &nbsp;
+                <select name = "dropdown">
+                  <option value = "Yes" onClick={()=>values.hw="0"}>No</option>
+                  <option value = "No" onClick={()=>values.hw="1"}>Yes</option>
+                </select>  
+            </label>
+            <br />
             <label>
               <Field type="checkbox" name="checked" value="1" />
               &nbsp;Asthma 
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
               <Field type="checkbox" name="checked" value="2" />
               &nbsp;Kidney Disease
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
               <Field type="checkbox" name="checked" value="3" />
               &nbsp;Liver Disease
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
                 <Field type="checkbox" name="checked" value="4" />  
                 &nbsp;Compromised Immune System
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
                 <Field type="checkbox" name="checked" value="5" />  
                 &nbsp;Heart Disease
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
                 <Field type="checkbox" name="checked" value="6" />  
                 &nbsp;Lung Disease
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
                 <Field type="checkbox" name="checked" value="7" />  
                 &nbsp;HIV Positive
@@ -92,7 +116,7 @@ class Reservation extends React.Component {
                 <Field type="checkbox" name="checked" value="8" />  
                 &nbsp;Hypertension
             </label>
-            <div id="checkbox-group"></div>
+            <br />
             <label>
               <select name = "dropdown">
                 <option value="" label="Smoking situation" selected>Smoking situation</option>
@@ -106,9 +130,9 @@ class Reservation extends React.Component {
                 <option value = "Heavy" onClick={()=>values.smoking="5"}>Heavy Smoking</option>
               </select>
             </label>
-            <div id="checkbox-group"></div>
-
+            <br /><br />
           <button type="submit">Results</button>
+          <br /><br />
         </Form>
       )}
           </Formik>
