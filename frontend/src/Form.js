@@ -15,7 +15,7 @@ class Reservation extends React.Component {
     const sweep = (ms) => new Promise((r) => setTimeout(r, ms));
     return (
       <div>
-        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {await sweep(500); this.props.pageChange(); this.props.valuesAdd(values) ;}}>
+        <Formik initialValues={{checked: [], smoking: 0, sex: 0, age: ""}} onSubmit={async (values) => {this.props.valuesAdd(values) ; this.props.pageChange(); }}>
           {({ values }) => (
         <Form>
           {/* 
@@ -71,8 +71,8 @@ class Reservation extends React.Component {
             <label>
                 Have you come in contact with a Covid+ person? &nbsp;
                 <select name = "dropdown">
-                  <option value = "Yes" onClick={()=>values.hw="0"}>No</option>
-                  <option value = "No" onClick={()=>values.hw="1"}>Yes</option>
+                  <option value = "Yes" onClick={()=>values.cc="0"}>No</option>
+                  <option value = "No" onClick={()=>values.cc="1"}>Yes</option>
                 </select>  
             </label>
             <br />
