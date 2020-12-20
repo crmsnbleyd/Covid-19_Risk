@@ -34,11 +34,11 @@ class Main extends React.Component {
             this.manipulateValues();
             var form = <Reservation pageChange={()=>this.setState(state => ({page: state.page + 1}))} valuesAdd={(e)=>this.setState({obj: e})} />;
             console.log('Fetching details for ', this.state.obj);
-            fetch(`https://b7b5668ed3a8.ngrok.io/sent/${this.state.obj.sex}/${this.state.obj.smoking}/${this.state.obj.age}/${this.state.obj.bmi}/${this.state.obj.cv}/${this.state.obj.cs}/${this.state.obj.cc}/${this.state.array[0]}/${this.state.array[1]}/${this.state.array[2]}/${this.state.array[3]}/${this.state.array[4]}/${this.state.array[5]}/${this.state.array[6]}/${this.state.array[7]}/${this.state.array[8]}/${this.state.obj.hw}`)
+            fetch(`https://e285b66c250a.ngrok.io/sent/${this.state.obj.sex}/${this.state.obj.smoking}/${this.state.obj.age}/${this.state.obj.bmi}/${this.state.obj.cv}/${this.state.obj.cs}/${this.state.obj.cc}/${this.state.array[0]}/${this.state.array[1]}/${this.state.array[2]}/${this.state.array[3]}/${this.state.array[4]}/${this.state.array[5]}/${this.state.array[6]}/${this.state.array[7]}/${this.state.array[8]}/${this.state.obj.hw}`)
             .then(response=>response.json())
             .then(data => 
                 {console.log(data) ;
-                 res.innerHTML=`<h2>${data.risk}</h2>`;
+                 res.innerHTML=`<h2>${data.risk}</h2><div>You have an approximately ${parseFloat(data.per).toFixed(2)}% chance of getting infected.</div>`;
                 });
 
         }

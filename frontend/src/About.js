@@ -13,6 +13,7 @@ const About = () => (
     The solution we have come up with employs machine learning to make the best decision and also to eliminate natural human bias.
     We have also made this website which uses the trained model to act as the frontend for our project, conveying the information in a digestible form.
     </p>
+    <br/>   
     <h3 className= "text-center mt-5">Meet the Team</h3>
     <div className="container mt-5">
         <div className="card about d-inline-block mx-1">
@@ -38,8 +39,7 @@ const About = () => (
             <p className="card-text">Simran is pursuing her Bachelors in Electrical and Electronics Engineering from Manipal Institute of Technology and has a passion for Machine Learning, Web Development, and Dancing.</p>
             <a href="https://www.linkedin.com/in/simran-98b4561a8/" target="_blank" rel="noreferrer" className="btn btn-outline-dark d-block mx-auto">Linkedin Profile</a>
         </div>
-        </div>
-        
+        </div> 
     </div>
   </div>
 );
