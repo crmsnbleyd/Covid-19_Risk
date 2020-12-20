@@ -6,7 +6,7 @@ function Navbarn() {
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);
     return (
-        <Navbar className="navbar-expand-lg navigation" light>
+        <Navbar className="navbar-expand-lg navigation" light id="navb">
             <img src={logo} alt="baby shark"className="img" />
             <NavbarBrand id="brand">Covid Risk Calculator</NavbarBrand>
             <NavbarToggler onClick={toggleNavbar} className="mr-2"/>

@@ -26,7 +26,6 @@ class Main extends React.Component {
     render(){
         if(this.state.page===0){
             var form = <Reservation pageChange={()=>this.setState(state => ({page: state.page + 1}))} valuesAdd={(e)=>this.setState({obj: e})} />;
-            var result=<div></div>;
         }
         else {
             const res = document.getElementById('res');
