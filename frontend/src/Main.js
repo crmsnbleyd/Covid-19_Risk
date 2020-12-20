@@ -2,6 +2,7 @@ import React from "react";
 import './Main.css';
 import Reservation from "./Form";
 import { Container, Row} from "reactstrap";
+import doctor from './img/doctor.png'
 
 class Main extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ class Main extends React.Component {
     render(){
         if(this.state.page===0){
             var form = <Reservation pageChange={()=>this.setState(state => ({page: state.page + 1}))} valuesAdd={(e)=>this.setState({obj: e})} />;
+            
         }
         else {
             const res = document.getElementById('res');
@@ -38,15 +40,15 @@ class Main extends React.Component {
             .then(response=>response.json())
             .then(data => 
                 {console.log(data) ;
-                 res.innerHTML=`<h2>${data.risk}</h2><div>You have an approximately ${parseFloat(data.per).toFixed(2)}% chance of getting infected.</div>`;
+                 res.innerHTML=`<h2>${data.risk}</h2><h4>You have an approximately ${parseFloat(data.per).toFixed(2)}% chance of getting infected.</h4>`;
                 });
-
         }
         return(
             <Container className="mt-5 text-justify">
                 <Row>
-                    <div className="col-6" id="opaque">{form}</div>
-                    <div className="col-6 text-center" id="res"></div>
+                    <div className="col-md-6 col-sm-12 text-light" id="opaque">{form}</div>
+                    <div className="col-md-6 col-sm-12 text-center"><div id="res"><h2 className="ph">Please Enter Your Details</h2></div>
+                    <span><img src={doctor} className="doctor"></img></span></div>
                 </Row>
             </Container>
         );

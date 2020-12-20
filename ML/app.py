@@ -82,13 +82,13 @@ def sent(sex : int, smoking: int, age: int, bmi: float, covid19_positive:int, co
     pred = model.predict(tst)
     print(pred[0])
     if pred[0] >= 80.0:
-      dct = {"risk":"Very High Risk"}
+      dct = {"risk":"Very High Risk", "per":str(pred[0])}
     elif pred[0] >= 30.0 and pred[0]< 80.0:
-      dct = {"risk":"High Risk"}
+      dct = {"risk":"High Risk", "per":str(pred[0])}
     elif pred[0] >= 10.0 and pred[0]< 30.0:
-      dct = {"risk":"Medium Risk"}
+      dct = {"risk":"Medium Risk", "per":str(pred[0])}
     else:
-      dct = {"risk":"Low Risk"}
+      dct = {"risk":"Low Risk", "per":str(pred[0])}
     jsonData = jsonable_encoder(dct)
     return JSONResponse(jsonData)
     

@@ -44,11 +44,32 @@
       background-color: #C1877B;
   }
   #res {
-      margin-top: 40%;
+      margin-top: 30%;
   }
   h2{
       font-size: 3em;
+      margin-top: -20%;
   }
+
+.ph {
+  margin-left: 10%;
+  animation: fadeIn ease 7s;
+  -webkit-animation: fadeIn ease 7s;
+  -moz-animation: fadeIn ease 7s;
+  -o-animation: fadeIn ease 7s;
+  -ms-animation: fadeIn ease 7s;
+}
+
+.doctor {
+  height: 70%;
+  width: 100%;
+  animation: fadeIn ease 7s;
+  -webkit-animation: fadeIn ease 7s;
+  -moz-animation: fadeIn ease 7s;
+  -o-animation: fadeIn ease 7s;
+  -ms-animation: fadeIn ease 7s;
+}
+
   @keyframes dotFlashing {
     0% {
       background-color: #4499a5;

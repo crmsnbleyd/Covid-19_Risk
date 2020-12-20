@@ -1,7 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 .but {
-  margin-top: 5px;
+  margin: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
+}
+
+.landing {
+  height: 60%;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Monoton", cursive; */
+}
+
+.fade-in-long {
+  animation: fadeIn ease 7s;
+  -webkit-animation: fadeIn ease 7s;
+  -moz-animation: fadeIn ease 7s;
+  -o-animation: fadeIn ease 7s;
+  -ms-animation: fadeIn ease 7s;
+  border: 10px solid;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;;
 }
