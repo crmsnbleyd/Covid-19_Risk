@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-import dashboard from './img/dashboard.png';
+import dashboard from './img/dashboard2.png';
 import './App.css';
 
 const first = "Calculate your risk of contracting Covid-19 in a few clicks"
