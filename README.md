@@ -1,4 +1,4 @@
 # execute
 Repository for the execute hackathon
 
-![dashboard](HTTPS://GitHub.com/crmsnbleyd/execute/frontend/src/img/dashboards.png)
+![dashboard](https://raw.githubusercontent.com/crmsnbleyd/execute/main/frontend/src/img/dashboard2.png)
