@@ -2,6 +2,6 @@
 A website to quickly calculate a person's susceptibility to the coronavirus.  
 Made for DTU's Execute Hackathon.
 
-##Screenshot 
+## Screenshot 
 
 ![dashboard](https://raw.githubusercontent.com/crmsnbleyd/execute/main/frontend/src/img/dashboard2.png)
